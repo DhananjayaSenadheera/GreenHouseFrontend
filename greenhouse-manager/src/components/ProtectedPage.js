@@ -6,15 +6,12 @@ const ProtectedPage = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if the token is expired
-        if (isTokenExpired()) {
-            alert("Session expired. Please log in again.");
-            localStorage.removeItem("token"); // Clear the token
-            navigate("/login"); // Redirect to login page
+        if (!localStorage.getItem("token") || isTokenExpired()) {
+            navigate("/login");
         }
     }, [navigate]);
 
-    return <>{children}</>; // Render the protected content if the token is valid
+    return <>{children}</>; // Render protected content
 };
 
 export default ProtectedPage;

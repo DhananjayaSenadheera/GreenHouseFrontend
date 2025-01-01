@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { login } from "../services/authService";
 import { useNavigate } from "react-router-dom";
-import "../FormStyles.css"; // Use the updated CSS file
+import "../Styles/FormStyles.css"; // Use the updated CSS file
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -13,9 +13,8 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             const token = await login(email, password);
-            alert("Login successful!");
-            console.log("Token:", token);
-            navigate("/profile"); // Redirect to the profile page
+            navigate("/dashboard");
+            //navigate("/profile"); // Redirect to the profile page
         } catch (err) {
             setError("Invalid email or password.");
         }

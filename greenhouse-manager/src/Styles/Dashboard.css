@@ -1,0 +1,94 @@
+/* General Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-rows: 60px auto;
+    grid-template-columns: 200px auto;
+    grid-template-areas:
+    "left-nav top-nav"
+    "left-nav content";
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Left Navigation */
+.dashboard-left-nav {
+    grid-area: left-nav;
+    background-color: #4a90e2; /* Match login form button color */
+    color: #ffffff;
+    padding: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+/* Top Navigation */
+.dashboard-top-nav {
+    grid-area: top-nav;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    font-size: 18px;
+    color: #333333;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Main Content */
+.dashboard-content {
+    grid-area: content;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-content h2 {
+    color: #4a90e2; /* Match the theme */
+}
+
+.dashboard-content p {
+    color: #666666;
+}
+.logout-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff4b5c; /* Red color for logout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 1rem;
+}
+
+.logout-button:hover {
+    background-color: #d43f4a;
+}

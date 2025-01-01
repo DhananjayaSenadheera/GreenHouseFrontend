@@ -54,6 +54,24 @@ export const getProfile = async () => {
     }
 };
 
+//Update user profile
+export const updateProfile = async (profileData) => {
+    try {
+        console.log(profileData);
+        const token = localStorage.getItem("token"); 
+        const response = await axios.put(`${API_URL}/Edit`, profileData, {
+            headers: {
+                Authorization: `Bearer ${token}`, 
+                "Content-Type": "application/json", 
+            },
+        });
+        return response.data; 
+    } catch (error) {
+        console.error("Error updating profile:", error);
+        throw error;
+    }
+};
+
 // Logout (Clear token from localStorage)
 export const logout = () => {
     localStorage.removeItem("token");
@@ -73,4 +91,5 @@ export const isTokenExpired = () => {
         return true; // If decoding fails, consider the token expired
     }
 };
+
 
