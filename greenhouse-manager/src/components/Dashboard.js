@@ -19,8 +19,24 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-content">
-            <h2>Welcome to your Dashboard!</h2>
-            <p>This is where your main content will go.</p>
+            <div className="dashboard-welcome">
+                <h2>Welcome, John Henderson!</h2>
+            </div>
+            {/* Main content */}
+            <div className="dashboard-stats">
+                <div className="stat-card">
+                    <h3>Registered Users</h3>
+                    <p>83</p>
+                </div>
+                <div className="stat-card">
+                    <h3>Daily Visitors</h3>
+                    <p>135</p>
+                </div>
+                <div className="stat-card">
+                    <h3>New Messages</h3>
+                    <p>23</p>
+                </div>
+            </div>
         </div>
     );
 };

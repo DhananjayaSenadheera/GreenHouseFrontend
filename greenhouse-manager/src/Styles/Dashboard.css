@@ -64,12 +64,15 @@
 
 /* Main Content */
 .dashboard-content {
-    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .dashboard-content h2 {
     color: #4a90e2; /* Match the theme */
@@ -77,6 +80,38 @@
 
 .dashboard-content p {
     color: #666666;
+}
+
+.dashboard-welcome {
+    text-align: left;
+    font-size: 18px;
+    color: #333333;
+}
+
+.dashboard-stats {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.stat-card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
 }
 .logout-button {
     padding: 0.5rem 1rem;
